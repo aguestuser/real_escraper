@@ -37,11 +37,11 @@ class BlockScraper < Scraper
         npage = Nokogiri::HTML(response)
         rows = npage.css(ROWS_PATH)
         if rows[2].css('td')[0].text.match(/No records were found that matched your search criteria./)
-          puts "NOT FOUND: lot number #{lot_number} in block number #{block_number}."
+          puts "  NOT FOUND: lot number #{lot_number} in block number #{block_number}."
         else
           lot_numbers ||= []
           lot_numbers.push lot_number
-          puts "FOUND: Lot number #{lot_number} in block number #{block_number}." 
+          puts "  FOUND: Lot number #{lot_number} in block number #{block_number}." 
         end
       else
         puts "No block found with block number #{block_number}"
