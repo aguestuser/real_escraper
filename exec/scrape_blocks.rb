@@ -5,8 +5,7 @@ require './models/lot.rb'
 require './scrapers/block_scraper.rb'
 
 def block_numbers
-  [1209]
-  # (1209..1211)
+  (1199..1477) # all of Crown Heights
 end
 
 puts "INITIALIZING: Beginning to build Block objects"
